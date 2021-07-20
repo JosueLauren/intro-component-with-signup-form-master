@@ -19,18 +19,18 @@
     </section>
     <section class="sec-form">
       <p class="título-form"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
-      <form action="#">
-        <label for="nome">
-          <input type="text" name="nome" id="nome" placeholder="Name">
+      <form class="form" action="#">
+        <label for="nome" id="nome-label">
+          <input type="text" name="nome" id="nome" placeholder="Name" class="inputs">
         </label>
-        <label for="sobrenome">
-          <input type="text" name="sobrenome" id="sobrenome" placeholder="Last Name">
+        <label for="sobrenome" id="sobrenome-label">
+          <input type="text" name="sobrenome" id="sobrenome" placeholder="Last Name" class="inputs">
         </label>
-        <label for="email">
-          <input type="email" name="email" id="email" placeholder="Email Address">
+        <label for="email" id="email-label">
+          <input type="email" name="email" id="email" placeholder="Email Address" class="inputs">
         </label>
-        <label for="senha">
-          <input type="password" name="senha" id="senha" placeholder="Password">
+        <label for="senha" id="senha-label">
+          <input type="password" name="senha" id="senha" placeholder="Password" class="inputs">
         </label>
         <input type="submit" value="CLAIM YOUR FREE TRIAL">
         <p class="rodapé-form">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
@@ -44,4 +44,95 @@
     </p>
   </footer>
 </body>
+<script>
+  const inputs = document.querySelectorAll('.inputs');
+  const form = document.querySelector('.form');
+
+  const msgs = {
+    nome: 'First Name cannot be empty',
+    sobrenome: 'Last Name cannot be empty',
+    email: 'Looks like this is not an email',
+    senha: 'Password cannot be empty'
+  };
+
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const msg = document.createElement('p')
+    msg.setAttribute('id', 'msg-erro')
+    msg.style.color = "hsl(0, 100%, 74%)"
+    msg.style.textAlign = 'center';
+    msg.style.fontSize = '0.7em'
+
+
+    inputs.forEach((input) => {
+
+          if(input.value.trim() === "" && input.getAttribute('id') === 'nome' && 
+          !document.querySelector('#msg-erro')) {
+            const labelNome = document.querySelector('#nome-label')
+            msg.innerText = `${msgs.nome}`
+            input.classList.add('valoresInválidos')
+            labelNome.appendChild(msg)
+
+            setTimeout(() => {
+            input.classList.remove('valoresInválidos')
+            msg.remove() 
+            }, 2000)
+
+         
+          } 
+
+           if(input.value.trim() === "" && input.getAttribute('id') === 'sobrenome' && 
+          !document.querySelector('#msg-erro')) {
+            const labelSobrenome = document.querySelector('#sobrenome-label')
+            msg.innerText = `${msgs.sobrenome}`
+            input.classList.add('valoresInválidos')
+            labelSobrenome.appendChild(msg)
+
+            setTimeout(() => {
+            input.classList.remove('valoresInválidos')
+            msg.remove() 
+            }, 2000)
+
+            
+          }
+          
+           if(input.value.trim() === "" && input.getAttribute('id') === 'email' && 
+          !document.querySelector('#msg-erro')) {
+            const labelEmail = document.querySelector('#email-label')
+            msg.innerText = `${msgs.email}`
+            input.classList.add('valoresInválidos')
+            input.placeholder = "email@example/com"
+            labelEmail.appendChild(msg)
+
+            setTimeout(() => {
+            input.classList.remove('valoresInválidos')
+            msg.remove() 
+            }, 2000)
+
+             
+          }
+          
+          if(input.value.trim() === "" && input.getAttribute('id') === 'senha' && 
+          !document.querySelector('#msg-erro')) {
+            const labelSenha = document.querySelector('#senha-label')
+            msg.innerText = `${msgs.senha}`
+            input.classList.add('valoresInválidos')
+            labelSenha.appendChild(msg)
+
+
+            setTimeout(() => {
+            input.classList.remove('valoresInválidos')
+            msg.remove() 
+            }, 2000)
+
+            
+          }
+
+      })
+      
+  })
+  
+</script>
 </html>

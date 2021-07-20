@@ -123,6 +123,13 @@ p.rodapé-form span {
     color: hsl(228, 45%, 44%);
 }
 
+.valoresInválidos {
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    border-color: var(--Red);
+}
+
 @media screen and (max-width: 900px) {
     body {
         background-image: url(images/bg-intro-mobile.png);
