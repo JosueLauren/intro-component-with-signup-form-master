@@ -3,19 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
+  <main class="principal">
+    <section class="descrição">
+      <h1 class="título"></h1>
+      <p class="parágrafo"></p>
+    </section>
+    <section class="sec-form">
+      <h1></h1>
+      <form action="#">
+        <label for="nome">
+          <input type="text" name="nome" id="nome" placeholder="Name">
+        </label>
+        <label for="sobrenome">
+          <input type="text" name="sobrenome" id="sobrenome" placeholder="Last Name">
+        </label>
+        <label for="email">
+          <input type="email" name="email" id="email" placeholder="Email Address">
+        </label>
+        <label for="senha">
+          <input type="password" name="senha" id="senha" placeholder="Password">
+        </label>
+        <input type="submit" value="CLAIM YOUR FREE TRIAL">
+        <p><span></span></p>
+      </form>
+    </section>
+  </main>
   Learn to code by watching others
 
   See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
