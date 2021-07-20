@@ -122,3 +122,22 @@ p.rodapé-form span {
 .attribution a { 
     color: hsl(228, 45%, 44%);
 }
+
+@media screen and (max-width: 900px) {
+    body {
+        background-image: url(images/bg-intro-mobile.png);
+        width: auto;
+        height: auto;
+    }
+
+    main.principal {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.descrição {
+        width: 100%;
+        text-align: center;
+    }
+}
