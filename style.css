@@ -1,3 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+    --Blue: hsl(248, 32%, 49%);
+    --Dark-Blue: hsl(249, 10%, 26%);
+    --Grayish-Blue: hsl(246, 25%, 77%);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(images/bg-intro-desktop.png) var(--Red);
+}
+
+main.principal {
+    margin-bottom: 30px;
+    width: 80%;
+    height: auto;
+    display: flex;
+}
+
+section.descrição {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: white;
+}
+
+h1.título {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+p.parágrafo {
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+section.sec-form {
+    width: 450px;
+}
+
+p.título-form {
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    border-radius: 5px;
+    background-color: var(--Blue);
+    color: white;
+    box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    width: 100%;
+    padding: 30px 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+form input {
+    display: block;
+    width: 90%;
+    height: 40px;
+    margin: 15px auto;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--Grayish-Blue);
+    outline-color: silver;
+    
+}
+
+form input::placeholder {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+form input[type="submit"] {
+    background-color: var(--Green);
+    padding: 0px;
+    color: white;
+    border-color: var(--Green);
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: hsla(154, 59%, 51%, 0.7);
+}
+
+p.rodapé-form {
+    font-size: 0.6em;
+    text-align: center;
+    color: var(--Grayish-Blue);
+}
+
+p.rodapé-form span {
+    color: var(--Red);
+}
 
 .attribution { 
     font-size: 11px;
