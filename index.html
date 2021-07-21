@@ -40,13 +40,18 @@
 <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Josue Lauren</a>.
     </p>
   </footer>
 </body>
 <script>
   const inputs = document.querySelectorAll('.inputs');
   const form = document.querySelector('.form');
+  const inputNome = document.querySelector('#nome');
+  const inputSobrenome = document.querySelector('#sobrenome');
+  const inputEmail = document.querySelector('#email');
+  const inputSenha = document.querySelector('#senha');
+  const principal = document.querySelector('.principal')
 
   const msgs = {
     nome: 'First Name cannot be empty',
@@ -66,71 +71,91 @@
     msg.style.fontSize = '0.7em'
 
 
-    inputs.forEach((input) => {
-
-          if(input.value.trim() === "" && input.getAttribute('id') === 'nome' && 
-          !document.querySelector('#msg-erro')) {
+         if(inputNome.value.trim() === "" ) {
             const labelNome = document.querySelector('#nome-label')
             msg.innerText = `${msgs.nome}`
-            input.classList.add('valoresInválidos')
-            labelNome.appendChild(msg)
+            inputNome.classList.add('valoresInválidos')
+            if (!document.querySelector('#msg-erro')) {
+              labelNome.appendChild(msg)
+            }
+            
 
             setTimeout(() => {
-            input.classList.remove('valoresInválidos')
+            inputNome.classList.remove('valoresInválidos')
             msg.remove() 
             }, 2000)
 
+            return
          
           } 
 
-           if(input.value.trim() === "" && input.getAttribute('id') === 'sobrenome' && 
-          !document.querySelector('#msg-erro')) {
+           if(inputSobrenome.value.trim() === "") {
             const labelSobrenome = document.querySelector('#sobrenome-label')
             msg.innerText = `${msgs.sobrenome}`
-            input.classList.add('valoresInválidos')
-            labelSobrenome.appendChild(msg)
+            inputSobrenome.classList.add('valoresInválidos')
+            if(!document.querySelector('#msg-erro')) {
+              labelSobrenome.appendChild(msg)
+            }
+            
 
             setTimeout(() => {
-            input.classList.remove('valoresInválidos')
+            inputSobrenome.classList.remove('valoresInválidos')
             msg.remove() 
             }, 2000)
 
-            
+            return
           }
           
-           if(input.value.trim() === "" && input.getAttribute('id') === 'email' && 
-          !document.querySelector('#msg-erro')) {
+           if(inputEmail.value.trim() === "") {
             const labelEmail = document.querySelector('#email-label')
             msg.innerText = `${msgs.email}`
-            input.classList.add('valoresInválidos')
-            input.placeholder = "email@example/com"
-            labelEmail.appendChild(msg)
+            inputEmail.classList.add('valoresInválidos')
+            inputEmail.placeholder = "email@example/com"
+            if(!document.querySelector('#msg-erro')) {
+              labelEmail.appendChild(msg)
+            }
+            
 
             setTimeout(() => {
-            input.classList.remove('valoresInválidos')
+            inputEmail.classList.remove('valoresInválidos')
             msg.remove() 
             }, 2000)
 
-             
+             return
           }
           
-          if(input.value.trim() === "" && input.getAttribute('id') === 'senha' && 
-          !document.querySelector('#msg-erro')) {
+          if(inputSenha.value.trim() === "") {
             const labelSenha = document.querySelector('#senha-label')
             msg.innerText = `${msgs.senha}`
-            input.classList.add('valoresInválidos')
-            labelSenha.appendChild(msg)
+            inputSenha.classList.add('valoresInválidos')
+            if(!document.querySelector('#msg-erro')){
+              labelSenha.appendChild(msg)
+            }
+            
 
 
             setTimeout(() => {
-            input.classList.remove('valoresInválidos')
+            inputSenha.classList.remove('valoresInválidos')
             msg.remove() 
             }, 2000)
 
-            
-          }
+            return
+         }
 
-      })
+
+         inputs.forEach(input => {
+           input.value = ''
+         });
+
+         setTimeout(() => {
+          const spinner = '<img src="images/spinner.gif" alt="gif-spinner">'
+          principal.innerHTML = spinner
+         },1000)
+
+         setTimeout(()=> {
+          const msgSucesso = '<h1 class="msg-sucesso"> Obrigado!!!!!!! Seus dados foram enviados com sucesso! </h1> '
+          principal.innerHTML = msgSucesso;
+         },3000)
       
   })
   

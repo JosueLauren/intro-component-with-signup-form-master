@@ -31,6 +31,10 @@ main.principal {
     display: flex;
 }
 
+main img {
+    margin: auto;
+}
+
 section.descrição {
     width: 50%;
     display: flex;
@@ -128,6 +132,11 @@ p.rodapé-form span {
     background-repeat: no-repeat;
     background-position: center right 10px;
     border-color: var(--Red);
+}
+
+.msg-sucesso {
+    font-size: 3em;
+    color: green;
 }
 
 @media screen and (max-width: 900px) {
